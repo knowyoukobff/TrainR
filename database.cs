@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace TrainR
@@ -24,39 +25,51 @@ namespace TrainR
             optionbuilder.UseSqlite(@"Data Source=" + path + "\\TrainR.db");
         }
 
-        public DbSet<Cities> City { get; set; }
-        public DbSet<Connections> Connection { get; set; }
-        public DbSet<Departures> Departure { get; set; }
-        public DbSet<Trains> Train { get; set; }
+        public DbSet<City> City { get; set; }
+        public DbSet<Connection> Connection { get; set; }
+        public DbSet<Departure> Departure { get; set; }
+        public DbSet<Train> Train { get; set; }
 
     }
 
-    public class Cities
+    public class City
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
+
+        [InverseProperty("Start")]
+        public ICollection<Connection> StartId { get; set; }
+        [InverseProperty("Destination")]
+        public ICollection<Connection> DestinationId { get; set; }
+
     }
 
-    public class Connections
+    public class Connection
     {
-        public int ID { get; set; }
-        public int Start_ID { get; set; }
-        public int Destination_ID { get; set; }
-        public int Train_type { get; set; }
+        public int Id { get; set; }
+        public Train Train { get; set; }
+        public City Start { get; set; }
+        public City Destination { get; set; }
+
+        [InverseProperty("Connection")]
+        public ICollection<Departure> ConnectionID { get; set; }
     }
 
-    public class Departures
+    public class Departure
     {
-        public int ID { get; set; }
-        public int Connection_ID { get; set; }
+        public int Id { get; set; }
+        public Connection Connection { get; set; }
         public TimeSpan Time { get; set; }
         public int Travel_time { get; set; }
     }
 
-    public class Trains
+    public class Train
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
+
+        [InverseProperty("Train")]
+        public ICollection<Connection> TrainType { get; set; }
     }
 
 }
