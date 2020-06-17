@@ -5,8 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TrainR"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="468" Width="507">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="49.409"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="106*"/>
+            <ColumnDefinition Width="69"/>
+            <ColumnDefinition Width="106*"/>
+        </Grid.ColumnDefinitions>
+        <ComboBox Grid.Row="0" Grid.Column="0" Margin="10,10,10,10"/>
+        <ComboBox Grid.Row="0" Grid.Column="2" Margin="10,10,10,10"/>
+        
+        <DataGrid Grid.Row="1" Grid.ColumnSpan="3" Margin="10"/>
 
     </Grid>
 </Window>
