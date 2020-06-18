@@ -44,7 +44,8 @@ namespace TrainR
                     new Connection { Id = 2, TrainId = 2, StartId = 3, DestinationId = 5 },
                     new Connection { Id = 3, TrainId = 2, StartId = 6, DestinationId = 8 },
                     new Connection { Id = 4, TrainId = 1, StartId = 8, DestinationId = 2 },
-                    new Connection { Id = 5, TrainId = 3, StartId = 2, DestinationId = 1 }
+                    new Connection { Id = 5, TrainId = 3, StartId = 2, DestinationId = 1 },
+                    new Connection { Id = 6, TrainId = 1, StartId = 1, DestinationId = 4 }
                 );
 
             modelBuilder.Entity<Departure>().HasData(
@@ -52,7 +53,9 @@ namespace TrainR
                     new Departure { Id = 2, ConnectionId = 1, Time = new TimeSpan(8, 0, 0), TravelTime = 150 },
                     new Departure { Id = 3, ConnectionId = 4, Time = new TimeSpan(20, 0, 0), TravelTime = 120 },
                     new Departure { Id = 4, ConnectionId = 2, Time = new TimeSpan(15, 30, 0), TravelTime = 70 },
-                    new Departure { Id = 5, ConnectionId = 3, Time = new TimeSpan(16, 20, 0), TravelTime = 60 }
+                    new Departure { Id = 5, ConnectionId = 3, Time = new TimeSpan(16, 20, 0), TravelTime = 60 },
+                    new Departure { Id = 6, ConnectionId = 5, Time = new TimeSpan(16, 20, 0), TravelTime = 60 },
+                    new Departure { Id = 7, ConnectionId = 6, Time = new TimeSpan(16, 20, 0), TravelTime = 60 }
                 );
         }
 
