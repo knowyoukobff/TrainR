@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:TrainR_Admin"
         mc:Ignorable="d"
         ResizeMode="NoResize"
-        Title="MainWindow" Height="596" Width="468">
+        Title="MainWindow" Height="595" Width="588">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
@@ -14,7 +14,7 @@
         </Grid.RowDefinitions>
         <Menu Grid.Row="0">
             <MenuItem Header="Cities">
-                <MenuItem Header="Add"/>
+                <MenuItem Header="Add" Click="MenuItem_Click"/>
                 <MenuItem Header="Edit"/>
                 <MenuItem Header="Remove"/>
             </MenuItem>
@@ -33,7 +33,7 @@
                 <MenuItem Header="Edit"/>
                 <MenuItem Header="Remove"/>
             </MenuItem>
-            <MenuItem Header="Users" Margin="168,0,0,0">
+            <MenuItem Header="Users" Margin="274,0,0,0">
                 <MenuItem Header="Add"/>
                 <MenuItem Header="Edit"/>
                 <MenuItem Header="Remove"/>
@@ -55,7 +55,7 @@
                     <RowDefinition Height="51*"/>
                 </Grid.RowDefinitions>
                 <Label Content="Cities" Grid.Row="0" Margin="10,0,10,0" />
-                <DataGrid Grid.Row="1" Margin="10,3,10,10"/>
+                <DataGrid Name="CitiesGrid" Grid.Row="1" Margin="10,3,10,10" IsReadOnly="True" ColumnWidth="auto" HeadersVisibility="Column"/>
             </Grid>
 
             <Grid Grid.Row="1" Grid.Column="0">
@@ -64,7 +64,7 @@
                     <RowDefinition Height="51*"/>
                 </Grid.RowDefinitions>
                 <Label Content="Connections" Grid.Row="0" Margin="10,0,10,0" />
-                <DataGrid Grid.Row="1" Margin="10,3,10,10"/>
+                <DataGrid Name="ConnectionsGrid" Grid.Row="1" Margin="10,3,10,10" IsReadOnly="True" ColumnWidth="auto" HeadersVisibility="Column"/>
             </Grid>
 
             <Grid Grid.Row="0" Grid.Column="1">
@@ -73,7 +73,7 @@
                     <RowDefinition Height="51*"/>
                 </Grid.RowDefinitions>
                 <Label Content="Departures" Grid.Row="0" Margin="10,0,10,0" />
-                <DataGrid Grid.Row="1" Margin="10,3,10,10"/>
+                <DataGrid Name="DeparturesGrid" Grid.Row="1" Margin="10,3,10,10" IsReadOnly="True" ColumnWidth="auto" HeadersVisibility="Column"/>
             </Grid>
 
             <Grid Grid.Row="1" Grid.Column="1">
@@ -82,7 +82,7 @@
                     <RowDefinition Height="51*"/>
                 </Grid.RowDefinitions>
                 <Label Content="Trains" Grid.Row="0" Margin="10,0,10,0" />
-                <DataGrid Grid.Row="1" Margin="10,3,10,10"/>
+                <DataGrid Name="TrainsGrid" Grid.Row="1" Margin="10,3,10,10" IsReadOnly="True" ColumnWidth="auto" HeadersVisibility="Column"/>
 
             </Grid>
         </Grid>

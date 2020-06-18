@@ -83,7 +83,7 @@ namespace TrainR
 
     public class Connection
     {
-        public int Id { get; set; }
+        public int? Id { get; set; }
         public int StartId { get; set; }
         public int DestinationId { get; set; }
         public int TrainId { get; set; }
@@ -98,7 +98,7 @@ namespace TrainR
 
     public class Departure
     {
-        public int Id { get; set; }
+        public int? Id { get; set; }
         public int ConnectionId { get; set; }
         public TimeSpan Time { get; set; }
         /// <summary>
@@ -111,7 +111,7 @@ namespace TrainR
 
     public class Train
     {
-        public int Id { get; set; }
+        public int? Id { get; set; }
         public string Name { get; set; }
 
         [InverseProperty("Train")]
