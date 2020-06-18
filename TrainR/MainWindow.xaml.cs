@@ -1,3 +1,4 @@
+﻿using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 using System;
@@ -63,6 +64,11 @@ namespace TrainR
             var selection = item.SelectedItem as string;
             ShortName selectedCity = sn.Single(s => s.Name == selection);
             DestId = selectedCity.Id;
+        }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 
