@@ -14,28 +14,17 @@
         </Grid.RowDefinitions>
         <Menu Grid.Row="0">
             <MenuItem Header="Cities">
-                <MenuItem Header="Add" Click="MenuItem_Click"/>
-                <MenuItem Header="Edit"/>
-                <MenuItem Header="Remove"/>
+                <MenuItem Header="Add" Click="AddCity_Click"/>
+                <MenuItem Header="Remove" Click="RemoveCity_Click"/>
             </MenuItem>
             <MenuItem Header="Connections">
-                <MenuItem Header="Add"/>
-                <MenuItem Header="Edit"/>
-                <MenuItem Header="Remove"/>
+                <MenuItem Header="Add" Click="AddConnection_Click"/>
             </MenuItem>
             <MenuItem Header="Departures">
-                <MenuItem Header="Add"/>
-                <MenuItem Header="Edit"/>
-                <MenuItem Header="Remove"/>
-            </MenuItem>
-            <MenuItem Header="Trains">
-                <MenuItem Header="Add"/>
-                <MenuItem Header="Edit"/>
-                <MenuItem Header="Remove"/>
+                <MenuItem Header="Add" Click="AddDeparture_Click"/>
             </MenuItem>
             <MenuItem Header="Users" Margin="274,0,0,0">
-                <MenuItem Header="Add"/>
-                <MenuItem Header="Edit"/>
+                <MenuItem Header="Add" Click="AddUser_Click"/>
                 <MenuItem Header="Remove"/>
                 <MenuItem Header="List"/>
             </MenuItem>

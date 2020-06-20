@@ -33,6 +33,93 @@ namespace TrainR_Admin
         public MainWindow()
         {
             InitializeComponent();
+
+            RefreshTables();
+        }
+
+        private void Test_Click(object sender, RoutedEventArgs e)
+        {
+            using (var context = new TimeTable())
+            {
+                context.Add(new Train {  });
+                context.SaveChanges();
+            }
+        }
+
+        private void AddCity_Click(object sender, RoutedEventArgs e)
+        {
+            var addCityDialog = new AddCity();
+
+            if (addCityDialog.ShowDialog() == true)
+            {
+                using (var context = new TimeTable())
+                {
+                    context.Add(new City { Id = null, Name = addCityDialog.NewName });
+                    context.SaveChanges();
+                }
+
+                RefreshTables();
+            }
+        }
+
+        private void AddConnection_Click(object sender, RoutedEventArgs e)
+        {
+            var addConnectionDialog = new AddConnection();
+
+            if (addConnectionDialog.ShowDialog() == true)
+            {
+                using (var context = new TimeTable())
+                {
+                    context.Add(addConnectionDialog.NewConnection);
+                    context.SaveChanges();
+                }
+
+                RefreshTables();
+            }
+        }
+
+        private void AddDeparture_Click(object sender, RoutedEventArgs e)
+        {
+            var addDepartureDialog = new AddDeparture();
+
+            if (addDepartureDialog.ShowDialog() == true)
+            {
+                using (var context = new TimeTable())
+                {
+                    context.Add(addDepartureDialog.NewDeparture);
+                    context.SaveChanges();
+                }
+
+                RefreshTables();
+            }
+        }
+
+
+        private void AddUser_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void RemoveCity_Click(object sender, RoutedEventArgs e)
+        {
+            var removeConnectionDialog = new RemoveCity();
+
+            if (removeConnectionDialog.ShowDialog() == true)
+            {
+                using (var context = new TimeTable())
+                {
+                    int id = removeConnectionDialog.CityId;
+
+                    context.Remove(context.City.Single(x => x.Id == id));
+                    context.SaveChanges();
+                }
+                
+                RefreshTables();
+            }
+        }
+
+        private void RefreshTables()
+        {
             using (var context = new TimeTable())
             {
                 var cities = context.City.Select(q => new { q.Id, q.Name }).ToList();
@@ -56,15 +143,6 @@ namespace TrainR_Admin
                 DeparturesGrid.ItemsSource = departures;
                 TrainsGrid.ItemsSource = trains;
             }
-        }
-
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            var item = sender as MenuItem;
-            var parent = item.Parent as MenuItem;
-            string header = parent.Header as string;
-
-
         }
     }
 }
