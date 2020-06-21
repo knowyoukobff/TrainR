@@ -19,9 +19,11 @@
             </MenuItem>
             <MenuItem Header="Connections">
                 <MenuItem Header="Add" Click="AddConnection_Click"/>
+                <MenuItem Header="Remove" Click="RemoveConnection_Click"/>
             </MenuItem>
             <MenuItem Header="Departures">
                 <MenuItem Header="Add" Click="AddDeparture_Click"/>
+                <MenuItem Header="Remove" Click="RemoveDeparture_Click"/>
             </MenuItem>
             <MenuItem Header="Users" Margin="274,0,0,0">
                 <MenuItem Header="Add" Click="AddUser_Click"/>

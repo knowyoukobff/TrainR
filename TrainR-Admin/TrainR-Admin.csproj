@@ -16,6 +16,12 @@
     <Compile Update="AddDeparture.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="RemoveDeparture.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="RemoveConnection.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="RemoveCity.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -23,6 +29,12 @@
 
   <ItemGroup>
     <Page Update="AddDeparture.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="RemoveDeparture.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="RemoveConnection.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="RemoveCity.xaml">

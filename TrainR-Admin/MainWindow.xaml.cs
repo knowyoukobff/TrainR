@@ -102,18 +102,54 @@ namespace TrainR_Admin
 
         private void RemoveCity_Click(object sender, RoutedEventArgs e)
         {
-            var removeConnectionDialog = new RemoveCity();
+            var removeCityDialog = new RemoveCity();
 
-            if (removeConnectionDialog.ShowDialog() == true)
+            if (removeCityDialog.ShowDialog() == true)
             {
                 using (var context = new TimeTable())
                 {
-                    int id = removeConnectionDialog.CityId;
+                    int id = removeCityDialog.CityId;
 
                     context.Remove(context.City.Single(x => x.Id == id));
                     context.SaveChanges();
                 }
                 
+                RefreshTables();
+            }
+        }
+
+        private void RemoveConnection_Click(object sender, RoutedEventArgs e)
+        {
+            var removeConnectionDialog = new RemoveConnection();
+
+            if (removeConnectionDialog.ShowDialog() == true)
+            {
+                using (var context = new TimeTable())
+                {
+                    int id = removeConnectionDialog.ConnectionId;
+
+                    context.Remove(context.Connection.Single(x => x.Id == id));
+                    context.SaveChanges();
+                }
+
+                RefreshTables();
+            }
+        }
+
+        private void RemoveDeparture_Click(object sender, RoutedEventArgs e)
+        {
+            var removeDepartureDialog = new RemoveDeparture();
+
+            if (removeDepartureDialog.ShowDialog() == true)
+            {
+                using (var context = new TimeTable())
+                {
+                    int id = removeDepartureDialog.DepartureId;
+
+                    context.Remove(context.Departure.Single(x => x.Id == id));
+                    context.SaveChanges();
+                }
+
                 RefreshTables();
             }
         }
