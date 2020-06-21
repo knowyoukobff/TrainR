@@ -27,8 +27,7 @@
             </MenuItem>
             <MenuItem Header="Users" Margin="274,0,0,0">
                 <MenuItem Header="Add" Click="AddUser_Click"/>
-                <MenuItem Header="Remove"/>
-                <MenuItem Header="List"/>
+                <MenuItem Header="Remove" Click="RemoveUser_Click" />
             </MenuItem>
         </Menu>
         <Grid Grid.Row="1">

@@ -13,5 +13,19 @@ namespace TrainR_Admin
     /// </summary>
     public partial class App : Application
     {
+        private void Application_Startup(object sender, StartupEventArgs e)
+        {
+            try
+            {
+                if (new LoginWindow().ShowDialog() == true)
+                {
+                    new MainWindow().ShowDialog();
+                }
+            }
+            finally
+            {
+                Shutdown();
+            }
+        }
     }
 }

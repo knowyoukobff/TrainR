@@ -22,14 +22,6 @@ namespace TrainR_Admin
     /// </summary>
     public partial class MainWindow : Window
     {
-        public Dictionary<string, Type> entitiesDictionary = new Dictionary<string, Type>()
-        {
-            { "Cities", typeof(City) },
-            { "Connections", typeof(Connection) },
-            { "Departures", typeof(Departure) },
-            { "Trains", typeof(Train) }
-        };
-
         public MainWindow()
         {
             InitializeComponent();
@@ -97,7 +89,22 @@ namespace TrainR_Admin
 
         private void AddUser_Click(object sender, RoutedEventArgs e)
         {
+            var addUserDialog = new AddUser();
 
+            if (addUserDialog.ShowDialog() == true)
+            {
+                MessageBox.Show("User added.");
+            }
+        }
+
+        private void RemoveUser_Click(object sender, RoutedEventArgs e)
+        {
+            var removeUserDialog = new RemoveUser();
+
+            if (removeUserDialog.ShowDialog() == true)
+            {
+                MessageBox.Show("User removed.");
+            }
         }
 
         private void RemoveCity_Click(object sender, RoutedEventArgs e)
