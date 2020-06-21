@@ -29,15 +29,6 @@ namespace TrainR_Admin
             RefreshTables();
         }
 
-        private void Test_Click(object sender, RoutedEventArgs e)
-        {
-            using (var context = new TimeTable())
-            {
-                context.Add(new Train {  });
-                context.SaveChanges();
-            }
-        }
-
         private void AddCity_Click(object sender, RoutedEventArgs e)
         {
             var addCityDialog = new AddCity();
